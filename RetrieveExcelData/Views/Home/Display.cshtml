@@ -1,0 +1,69 @@
+﻿@using RetrieveExcelData.Models;
+@using System.Data
+@model CellList
+@{
+    ViewData["Title"] = "Extract";
+} 
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+
+@if (Model.ExtractedCells != null && Model.ExtractedCells.Count > 0)
+{
+    <span>Extracted from Worksheet: <strong>Several sheets</strong>; Range: <strong>Single cell(s)</strong>. </span>
+
+    <table class="table table-responsive table-hover table-sm">
+           <tr>
+            <td style="width: 25%">Sheet Name</td>
+            <td style="width: 20%">Cell Address</td>
+            <td style="width: 5%">Value</td>
+           </tr>
+              @for (int i = 0; i < Model.ExtractedCells.Count; i++)
+              {
+                <tr>
+                    <td>@Model.ExtractedCells[i].SheetName</td>
+                    <td>@Model.ExtractedCells[i].CellAddress</td>
+                    <td>@Model.ExtractedCells[i].CellValue</td>
+                </tr>
+              }
+     </table> 
+     <br />
+     <hr />
+}
+
+
+@if (Model.ExtractedTables != null)
+{
+   @for (int x = 0; x < Model.ExtractedTables.Count; x++)
+   {
+        var table = Model.ExtractedTables[x];
+        <span>Extracted from Worksheet: <strong>@table.SheetName</strong>; Range: <strong>@table.CellAddress</strong>. </span>
+        <hr />
+        @*
+         <div>@Html.Raw(Model.TableHtml)</div>
+        <hr />*@
+        @if (table.ExtractedList != null)
+        {
+           <table class="table table-responsive table-hover table-sm">
+           <tr>
+              @for (int i = 0; i < table.ExtractedList.Columns.Count; i++)
+              {
+                 <td>@table.ExtractedList.Columns[i].ColumnName </td>
+              }
+          </tr>
+              @for (int i = 0; i < table.ExtractedList.Rows.Count; i++)
+              {
+                <tr>
+                   @for (int j = 0; j < table.ExtractedList.Columns.Count; j++)
+                   {
+                      <td>@table.ExtractedList.Rows[i][j].ToString()</td>
+                   }
+               </tr>
+              }
+          </table> 
+          <br />
+          <hr />
+        }
+   } 
+}

@@ -1,0 +1,1160 @@
+﻿@{
+    ViewData["Title"] = "EPPlus 5/6";
+}
+<h1>@ViewData["Title"]</h1>
+
+<main role="main" class="pb-3 mt-1">
+    <div class="row">
+<div class="col-lg-12 text-center mb-4 mt-5">
+@*<h1>EPPlus 5/6</h1>*@
+<h5>Features and technical overview</h5>
+</div>
+</div>
+
+<div class="row bg-dark">
+<div class="col-12 text-center">
+<h2 class="text-light p-2">Supported functions</h2>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<!-- <div class="shadow-lg border border-light rounded-lg p-2 my-3">
+    <h5>Functions</h5>
+    <p>
+        Compared with EPPlus 4, there are <strong>181</strong> new functions implemented in EPPlus 6.0 - it supports in total <strong>337</strong> functions (see below).
+    </p>
+    <p>Learn more about the formula calculation capabilities of EPPlus in our <a href="https://github.com/EPPlusSoftware/EPPlus/wiki/Formula-Calculation" target="_blank">developer wiki <i class="fa fa-external-link fa-xs"></i></a></p>
+</div> -->
+
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Database</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DAVERAGE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DGET</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DSUM</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DCOUNT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DMAX</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DVAR</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DCOUNTA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DMIN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DVARP</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Date and time</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DATE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISOWEEKNUM</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TODAY</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DATEDIF</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MINUTE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">WEEKDAY</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DATEVALUE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MONTH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">WEEKNUM</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DAY</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NETWORKDAYS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">WORKDAY</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DAYS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NETWORKDAYS.INTL</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">WORKDAY.INTL</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DAYS360</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NOW</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">YEAR</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EDATE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SECOND</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">YEARFRAC</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EOMONTH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TIME</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">HOUR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TIMEVALUE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Engineering</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BESSELI</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">BITRSHIFT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ERFC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BESSELJ</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">BITXOR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ERFC.PRECISE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BESSELK</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">COMPLEX</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">HEX2BIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BESSELY</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">CONVERT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">HEX2DEC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BIN2DEC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DEC2BIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">HEX2OCT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BIN2HEX</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DEC2HEX</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">OCT2BIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BIN2OCT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DEC2OCT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">OCT2DEC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BITAND</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DELTA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">OCT2HEX</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BITLSHIFT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ERF</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BITOR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ERF.PRECISE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Financial</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACCRINT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">DURATION</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PPMT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACCRINTM</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">EFFECT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PRICE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPDAYBS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPDAYS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FVSCHEDULE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RATE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPDAYSNC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">INTRATE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RRI</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPNCD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">IPMT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SLN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPNUM</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">IRR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SYD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUPPCD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISPMT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TBILLEQ</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CUMIPMT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MDURATION</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TBILLPRICE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CUMPRINC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MIRR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TBILLYIELD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DB</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NOMINAL</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">XIRR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DDB</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NPER</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">XNPV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DISC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NPV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">YIELD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DOLLARDE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PDURATION</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">YIELDMAT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DOLLARFR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PMT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Information</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ERROR.TYPE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISLOGICAL</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISTEXT</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ISBLANK</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISNA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">N</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ISERR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISNONTEXT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NA</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ISERROR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISNUMBER</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SHEET</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ISEVEN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISODD</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TYPE</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Logical</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AND</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">IFS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SWITCH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">FALSE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MAXIFS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.3</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TRUE</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">IF</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MINIFS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.3</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">XOR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">IFERROR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NOT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">IFNA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">OR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Lookup and reference</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ADDRESS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">INDEX</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROW</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHOOSE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">INDIRECT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROWS</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COLUMN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LOOKUP</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VLOOKUP</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COLUMNS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MATCH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">HLOOKUP</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">OFFSET</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Math and trig</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ABS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FACT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROUNDDOWN</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACOS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FACTDOUBLE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROUNDUP</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACOSH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FLOOR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SEC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACOT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FLOOR.MATH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SECH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ACOTH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FLOOR.PRECISE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SERIESSUM</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ASIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GCD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SIGN</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ASINH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">INT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SIN</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ATAN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ISO.CEILING</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SINH</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ATAN2</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SQRT</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">ATANH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LOG</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SQRTPI</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CEILING</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LOG10</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUBTOTAL</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CEILING.MATH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MOD</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUM</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CEILING.PRECISE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MROUND</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMIF</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COMBIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MULTINOMIAL</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMIFS</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COMBINA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ODD</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMPRODUCT</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PI</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMSQ</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COSH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">POWER</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMX2MY2</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PRODUCT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMX2PY2</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COTH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">QUOTIENT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUMXMY2</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CSC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RADIANS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TAN</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CSCH</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RAND</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TANH</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DEGREES</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RANDBETWEEN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TRUNC</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EVEN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROMAN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EXP</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">ROUND</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Statistical</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AGGREGATE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FISHERINV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTILE.INC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AVEDEV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FORECAST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTRANK</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AVERAGE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">FORECAST.LINEAR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTRANK.EXC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AVERAGEA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GAMMA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTRANK.INC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AVERAGEIF</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GAMMALN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERMUT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">AVERAGEIFS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GAMMALN.PRECISE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERMUTATIONA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BETA.DIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GAUSS</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PHI</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BETA.INV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">GEOMEAN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">QUARTILE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BETADIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">HARMEAN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">QUARTILE.EXC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">BETAINV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">INTERCEPT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">QUARTILE.INC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHIDIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">KURT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RANK</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHIINV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LARGE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RANK.AVG</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHISQ.DIST.RT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LCM</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.1</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RANK.EQ</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHISQ.INV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MAX</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RSQ</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHISQ.INV.RT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MAXA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SKEW</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CONFIDENCE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MEDIAN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SKEW.P</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CONFIDENCE.NORM</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MIN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SMALL</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CONFIDENCE.T</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MINA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STANDARDIZE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CORREL</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MODE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEV</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUNT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MODE.SNGL</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEV.P</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUNTA</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORM.DIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEV.S</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUNTBLANK</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORM.INV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEVA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUNTIF</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORM.S.DIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEVP</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COUNTIFS</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORM.S.INV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">STDEVPA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COVAR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORMDIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VAR</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COVARIANCE.P</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORMINV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VAR.P</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">COVARIANCE.S</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORMSDIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VAR.S</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DEVSQ</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NORMSINV</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.8</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VARA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EXPON.DIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PEARSON</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VARP</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EXPONDIST</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTILE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VARPA</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">FISHER</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v6.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PERCENTILE.EXC</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="row">
+<div class="col">
+    <h4>Text</h4>
+</div>
+</div>
+<div class="row">
+<div class="col table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="3">Functions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CHAR</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LEN</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">T</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CLEAN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">LOWER</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TEXT</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CONCAT</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">MID</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TEXTJOIN</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.2</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">CONCATENATE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">NUMBERVALUE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">TRIM</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">DOLLAR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.5</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">PROPER</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">UNICHAR</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">EXACT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">REPLACE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">UNICODE</div><div class="badge badge-primary mr-md-3 mr-sm-1" style="float:right">v5.0</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">FIND</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">REPT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">UPPER</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">FIXED</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">RIGHT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">VALUE</div><div class="badge badge-secondary mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">HYPERLINK</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SEARCH</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <div style="float:left">LEFT</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left">SUBSTITUTE</div><div class="badge badge-secondary  mr-md-3 mr-sm-1" style="float:right">v4</div>                            </td>
+                    <td class="w-25">
+                        <div style="float:left"></div>                            </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+</main>

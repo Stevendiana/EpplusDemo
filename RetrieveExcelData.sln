@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrieveExcelData", "RetrieveExcelData\RetrieveExcelData.csproj", "{C18803BD-C12A-4F9B-B103-DFFD06DD01A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C18803BD-C12A-4F9B-B103-DFFD06DD01A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C18803BD-C12A-4F9B-B103-DFFD06DD01A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C18803BD-C12A-4F9B-B103-DFFD06DD01A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C18803BD-C12A-4F9B-B103-DFFD06DD01A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8DCF989-211E-43C4-A3E5-5A32E00750B0}
+	EndGlobalSection
+EndGlobal

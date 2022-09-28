@@ -1,0 +1,281 @@
+﻿
+@using RetrieveExcelData.Models;
+@model CellList;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="~/js/jquery.js"></script>
+
+<div class="container row">
+    <div class="col-md-5 col-sm-12">
+       <form method="post" enctype="multipart/form-data">
+         <div id="divUploadFile" style="width:400px;height:400px;line-height:400px;border:1px solid #000000;text-align:center;background-color: lightblue;">
+          Drop File Here
+         </div>
+         <br />
+         <img id="imgLoading" src="~/Images/giphy.gif" style="display:none;" />
+       </form>
+    </div>
+    <!-- <div class="vl"></div> -->
+     
+  <div class="col-md-7 col-sm-12">
+      <form method="post" enctype="multipart/form-data" asp-action="Retrieve" asp-controller="Retrieve">
+       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <legend>Input Cells</legend>
+        <table id="InputTable" class="table">
+        <tr>
+            <td style="width: 25%">Sheet Name</td>
+            <td style="width: 20%">Cell Address</td>
+            <td style="width: 25%">Data Type</td>
+            <td style="width: 25%">Cell Value</td>
+            <td style="width: 5%"></td>
+        </tr>
+        @foreach (var item in (IEnumerable<Cells>)ViewBag.InputList)
+        {
+             <tr>
+                <td>@item.SheetName</td>
+                <td>@item.CellAddress</td>
+                <td>@item.DataType</td>
+                <td>@item.CellValue</td>
+                <td></td>
+            </tr>
+        }
+        @for (int i = 0; i < Model.InputData.Count(); i++)
+        {
+           <tr id="@($"newInputrow{i}")"> 
+             <td contenteditable="true">
+                <input id="@($"Text1{i}")" type="text" asp-for="@Model.InputData[i].SheetName" name="@Model.InputData[i].SheetName" />
+                <br /><span asp-validation-for="@Model.InputData[i].SheetName" class="text-danger"></span>
+             </td>
+
+            <td contenteditable="true">
+                <input id="@($"Text2{i}")" type="text" asp-for="@Model.InputData[i].CellAddress" name="@Model.InputData[i].CellAddress" />
+                <br /><span asp-validation-for="@Model.InputData[i].CellAddress" class="text-danger"></span>
+            </td>
+
+            <td>
+                <select id="@($"Text3{i}")" asp-for="@Model.InputData[i].DataType" name="@Model.InputData[i].DataType" class="form-control">
+                       <option value="Number">Number</option>
+                       <option value="Text">Text</option>
+                 </select>
+                <br /> <span asp-validation-for="@Model.InputData[i].DataType" class="text-danger"></span>
+            </td>
+
+            <td contenteditable="true">
+                <input id="@($"Text4{i}")" type="text" asp-for="@Model.InputData[i].CellValue" name="@Model.InputData[i].CellValue"/>
+                <br /> <span asp-validation-for="@Model.InputData[i].CellValue class="text-danger"></span>
+            </td>
+            <td>
+                <input id="@($"Button{i}")" type="button" onclick="removenewInputrow(i);" value="Delete" class="btn btn-danger" />
+            </td>
+         </tr>
+        }
+       
+    </table>
+    <p>
+       <input id="addInput" type="button" value="Add Input" class="btn btn-primary" />
+    </p>
+    <hr />
+
+    <legend>Output Cells</legend>
+        <table id="OutputTable" class="table">
+        <tr>
+            <td style="width: 25%">Sheet Name</td>
+            <td style="width: 20%">Cell Address</td>
+            <td style="width: 50%">Cell Value</td>
+            <td style="width: 5%"></td>
+        </tr>
+        @foreach (var item in (IEnumerable<OutputCells>)ViewBag.OutputList)
+        {
+            <tr>
+                <td>@item.OutputSheetName</td>
+                <td>@item.CellAddress</td>
+                <td>@item.CellValue</td>
+                <td></td>
+            </tr>
+        }
+        @for (int i = 0; i < Model.OutputData.Count(); i++)
+        {
+          <tr id="@($"newOutputrow{i}")"> 
+           <td contenteditable="true">
+                <input id="@($"outputText1{i}")" type="text" asp-for="@Model.OutputData[i].OutputSheetName" name="@Model.OutputData[i].OutputSheetName"/>
+                <br /><span asp-validation-for="@Model.OutputData[i].OutputSheetName" class="text-danger"></span>
+            </td>
+
+            <td contenteditable="true">
+                <input id="@($"outputText2{i}")" type="text" asp-for="@Model.OutputData[i].CellAddress" name="@Model.OutputData[i].CellAddress" />
+                <br /><span asp-validation-for="@Model.OutputData[i].CellAddress" class="text-danger"></span>
+            </td>
+
+            <td contenteditable="true">
+                <input id="@($"outputText3{i}")" type="text" asp-for="@Model.OutputData[i].CellValue" name="@Model.OutputData[i].CellValue" />
+                <br /> <span asp-validation-for="@Model.OutputData[i].CellValue class="text-danger"></span>
+            </td>
+            <td>
+                <input id="@($"outputButton{i}")" type="button" onclick="removenewOutputrow(i);" value="Delete" class="btn btn-danger" />
+            </td>
+           </tr>         
+        }
+    </table>
+    <p>
+       <input id="addOutput" type="button" value="Add Output" class="btn btn-primary"/>
+    </p>
+     <hr />
+    <input type="submit" value="Retrieve" class="btn btn-primary" />
+       
+    </form>
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitDragAndDrop();
+        DragDropOperation();
+    });
+
+    function InitDragAndDrop() {
+        $("#divUploadFile").on("dragenter", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+
+        $("#divUploadFile").on("dragover", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+
+        $("#divUploadFile").on("drop", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+    }
+
+    function DragDropOperation() {
+        $("#divUploadFile").on("drop", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+
+            var files = evt.originalEvent.dataTransfer.files;
+            var fileNames = "";
+
+            if (files.length > 0) {
+                fileNames += "Uploading file <br />";
+
+                for (var i = 0; i < files.length; i++) {
+                    fileNames += files[i].name + "<br />";
+                }
+            }
+
+            $("#divUploadFile").html(fileNames);
+
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/UploadFiles",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (message) {
+                    $("#divUploadFile").html(message);
+                },
+                error: function () {
+                    $("#divUploadFile").html(message);
+                },
+                beforeSend: function () {
+                    $("#imgLoading").show();
+                },
+                complete: function () {
+                    $("#imgLoading").hide();
+                },
+            });
+        });
+    }
+
+    var counter = 1;
+        $(function () {
+            $('#addInput').click(function () {
+                
+                $('<tr id="newInputrow' + counter + '">' +
+                '<td contenteditable="true">' +
+                '<input id="Text1' + counter + ')" type="text" asp-for="@Model.' + 'InputData[' + counter + '].SheetName" name="@Model.' + 'InputData[' + counter + '].SheetName" />' +
+                '<br /><span asp-validation-for="@Model.' + 'InputData[' + counter + '].SheetName" class="text-danger"></span>' +
+                '</td>' +
+
+                '<td contenteditable="true">' +
+                '<input id="Text2' + counter + ')" type="text" asp-for="@Model.' + 'InputData[' + counter + '].CellAddress" name="@Model.' + 'InputData[' + counter + '].CellAddress" />' +
+                '<br /><span asp-validation-for="@Model.' + 'InputData[' + counter + '].CellAddress" class="text-danger"></span>' +
+                '</td>' +
+                '<td>' +
+                '<select id="Text3' + counter + ')" asp-for="@Model.' + 'InputData' + counter + '].DataType" name="@Model.' + 'InputData[' + counter + '].DataType" class="form-control">' +
+                '<option value="Number">Number</option>' +
+                '<option value="Text">Text</option>' +
+                '</select>' +
+                '<br /> <span asp-validation-for="@Model.' + 'InputData[' + counter + '].CellValue class="text-danger"></span>' +
+                '</td>' +
+                '<td contenteditable="true">' +
+                '<input id="Text4' + counter + ')" type="text" asp-for="@Model.' + 'InputData[' + counter + '].CellValue" name="@Model.' + 'InputData[' + counter + '].CellValue"/>' +
+                '<br /> <span asp-validation-for="@Model.' + 'InputData[' + counter + '].CellValue class="text-danger"></span>' +
+                '</td>' +
+                '<td>' +
+                   '<input id="Button' + counter + ')" type="button" onclick="removenewOutputrow();" value="Delete" class="btn btn-danger" />' +
+                 '</td>' +
+                 '</tr>').appendTo('#InputTable');
+                counter++;
+                return false;
+            });
+        });
+         var outputcounter = 1;
+        $(function () {
+            $('#addOutput').click(function () {
+               
+                $('<tr id="newOutputrow' + outputcounter + '">' +
+                '<td contenteditable="true">' +
+                '<input id="outputText1' + outputcounter + ')" type="text" asp-for="@Model.' + 'OutputData[' + outputcounter + '].OutputSheetName" name="@Model.' + 'OutputData[' + counter + '].OutputSheetName" />' +
+                '<br /><span asp-validation-for="@Model.' + 'OutputData[' + outputcounter + '].OutputSheetName" class="text-danger"></span>' +
+                '</td>' +
+
+                '<td contenteditable="true">' +
+                '<input id="outputText2' + outputcounter + ')" type="text" asp-for="@Model.' + 'OutputData[' + outputcounter + '].CellAddress" name="@Model.' + 'OutputData[' + counter + '].CellAddress"  />' +
+                '<br /><span asp-validation-for="@Model.' + 'OutputData[' + outputcounter + '].CellAddress" class="text-danger"></span>' +
+                '</td>' +
+
+                '<td contenteditable="true">' +
+                '<input id="outputText3' + outputcounter + ')" type="text" asp-for="@Model.' + 'OutputData[' + outputcounter + '].CellValue" name="@Model.' + 'OutputData[' + counter + '].CellValue"  />' +
+                '<br /> <span asp-validation-for="@Model.' + 'OutputData[' + outputcounter + '].CellValue class="text-danger"></span>' +
+                '</td>' +
+                '<td>' +
+                   '<input id="outputButton' + outputcounter + ')" type="button" onclick="removenewOutputrow();" value="Delete" class="btn btn-danger" />' +
+                 '</td>' +
+                 '</tr>').appendTo('#OutputTable');
+                outputcounter++;
+                return false;
+            });
+        });
+        
+        function removeInputrow(index) {
+              $('#inputrow' + index).remove();
+            return false;
+        }
+         function removeOutputrow(index) {
+              $('#outputrow' + index).remove();
+            return false;
+         }
+         function removenewOutputrow(index) {
+              if (counter > 1) {
+                $('#newOutputrow' + index).remove();
+              }
+            return false;
+         }
+         function removenewInputrow(index) {
+             if (counter > 1) {
+              $('#newInputrow' + index).remove();
+             }
+            return false;
+         }
+</script>

@@ -1,0 +1,199 @@
+﻿
+@using RetrieveExcelData.Models;
+@using System.Data
+@model CellList
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="~/js/jquery.js"></script>
+
+<div id="page" class="container row">
+    <div class="col-md-5 col-sm-12">
+       <form method="post" enctype="multipart/form-data">
+         <div id="divUploadFile" style="width:400px;height:400px;line-height:400px;border:1px solid #000000;text-align:center;background-color: lightblue;">
+          @Model.ImageMessage
+         </div>
+         <br />
+         <img id="imgLoading" src="~/Images/giphy.gif" style="display:none;" />
+       </form>
+    </div>
+     
+  <div class="col-md-7 col-sm-12">
+   
+        <form asp-action="Index" asp-controller="Home" method="post" enctype="multipart/form-data">
+           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+             <legend>Input Cells</legend>
+        <table id="InputTable" class="table table-responsive table-hover table-sm">
+        <tr>
+            <td style="width: 25%">Sheet Name</td>
+            <td style="width: 20%">Cell Address</td>
+            <td style="width: 25%">Data Type</td>
+            <td style="width: 25%">Cell Value</td>
+            <td style="width: 5%"></td>
+        </tr>
+      
+            @for (int i = 0; i < Model.InputData.Count(); i++)
+            {
+               <tr> 
+                <td>
+                  <input id="Text1" type="text" asp-for="InputData[i].SheetName" class="input-control" />
+                  <br /><span asp-validation-for="InputData[i].SheetName" class="text-danger"></span>
+                </td>
+
+                <td>
+                  <input id="Text2" type="text" asp-for="InputData[i].CellAddress" class="input-control" />
+                  <br /><span asp-validation-for="InputData[i].CellAddress" class="text-danger"></span>
+                </td>
+
+                <td>
+                  <select id="Text3" asp-for="InputData[i].DataType" class="input-control">
+                       <option value="Number">Number</option>
+                       <option value="Text">Text</option>
+                  </select>
+                </td>
+
+               <td>
+                 <input id="Text4" type="text" asp-for="InputData[i].CellValue" class="input-control" />
+                 <br /> <span asp-validation-for="InputData[i].CellValue" class="text-danger"></span>
+              </td>
+              <td><button id="inputdelete[@i]" class="btn btn-danger deletebutton" type="submit" name="deleteinput" value="@i" formaction="@Url.Action("DeleteInput", "Home")">x</button></td>
+             </tr>         
+            }
+         
+        </table>
+         <p>
+            <input class="btn btn-primary" type="submit" name="inputSubmit" value="Add Input" formaction="@Url.Action("AddInputCell", "Home")"/>
+            @if (Model.InputData.Count() > 0)
+            {
+               <input class="btn btn-danger" type="submit" name="clearinput" value="Clear Input Table" formaction="@Url.Action("ClearInputTable", "Home")"/>   
+            }
+         </p>
+       <hr />
+              <legend>Output Cells</legend>
+          
+              <table id="OutputTable" class="table table-responsive table-hover table-sm">
+        <tr>
+            <td style="width: 25%">Sheet Name</td>
+            <td style="width: 20%">Range</td>
+            <td style="width: 5%"></td>
+        </tr>
+      
+            @for (int i = 0; i < Model.OutputData.Count(); i++)
+            {
+               <tr> 
+                <td>
+                  <input id="Text1" type="text" asp-for="OutputData[i].OutputSheetName" class="input-control" />
+                  <br /><span asp-validation-for="OutputData[i].OutputSheetName" class="text-danger"></span>
+                </td>
+                <td>
+                  <input id="Text2" type="text" asp-for="OutputData[i].Range" class="input-control" />
+                  <br /><span asp-validation-for="OutputData[i].Range" class="text-danger"></span>
+                </td>
+               <td><button id="outputdelete[@i]" class="btn btn-danger deletebutton" type="submit" name="deleteoutput" value="@i" formaction="@Url.Action("DeleteOutput", "Home")">x</button></td>
+             </tr>         
+            }
+         
+        </table>
+         <p>
+            <input class="btn btn-primary" type="submit" name="outputSubmit" value="Add Output" formaction="@Url.Action("AddOutputCell", "Home")"/>
+            @if (Model.OutputData.Count() > 0)
+            {
+               <input class="btn btn-danger" type="submit" name="clearoutput" value="Clear Input Table" formaction="@Url.Action("ClearOutputTable", "Home")"/>   
+            }
+         </p>
+         <hr />
+            @*@if (Model.File!=null && Model.OutputData.Count() > 0)
+            {*@
+               <input id="btnSubmit" type="submit" value="Extract" name="extract" class="btn btn-primary" formaction="@Url.Action("Extract", "Home")"/> 
+            @*}*@
+       </form>
+      
+  </div>
+       <div class="spinner" style="display:none">
+            <div class="center-div">
+                <div class="inner-div">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitDragAndDrop();
+        DragDropOperation();
+        ShowLoader();
+    });
+
+    function InitDragAndDrop() {
+        $("#divUploadFile").on("dragenter", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+
+        $("#divUploadFile").on("dragover", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+
+        $("#divUploadFile").on("drop", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+    }
+
+    function DragDropOperation() {
+        $("#divUploadFile").on("drop", function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+
+            var files = evt.originalEvent.dataTransfer.files;
+            var fileNames = "";
+
+            if (files.length > 0) {
+                fileNames += "Uploading file <br />";
+
+                for (var i = 0; i < files.length; i++) {
+                    fileNames += files[i].name + "<br />";
+                }
+            }
+
+            $("#divUploadFile").html(fileNames);
+
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UploadFiles","Home")",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (message) {
+                    $("#divUploadFile").html(message);
+                },
+                error: function () {
+                    $("#divUploadFile").html(message);
+                },
+                beforeSend: function () {
+                    $("#imgLoading").show();
+                },
+                complete: function () {
+                    $("#imgLoading").hide();
+                },
+            });
+        });
+    }
+
+    function ShowLoader() {
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                $('.spinner').css('display', 'block');
+            });
+        });
+	}
+</script>
